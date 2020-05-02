@@ -4,6 +4,7 @@ MAINTAINER tkoyama010@gmail.com
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
+ENV PYTHONPATH "/usr/local/lib/python3.6/site-packages:$PYTHONPATH"
 
 USER root
 WORKDIR work
