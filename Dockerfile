@@ -5,6 +5,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
 
+USER root
+
 # getfem repository
 
 RUN apt-get install -y --no-install-recommends git
