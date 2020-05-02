@@ -6,6 +6,7 @@ ENV LANG C.UTF-8
 ENV TERM xterm
 
 USER root
+WORKDIR work
 RUN apt-get update
 
 # getfem repository
