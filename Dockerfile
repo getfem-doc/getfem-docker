@@ -46,3 +46,4 @@ RUN cd getfem && \
     make -j8 && \
     make -j8 check && \
     make install
+RUN export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH"
