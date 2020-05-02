@@ -14,7 +14,6 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends ca-certificates
 RUN apt-get install -y --no-install-recommends git
 RUN git clone https://github.com/getfem-doc/getfem.git
-RUN cd getfem
 
 # install dependencies
 
@@ -36,21 +35,14 @@ RUN apt-get install -y --no-install-recommends xzdec
 RUN apt-get install -y --no-install-recommends fig2ps
 RUN apt-get install -y --no-install-recommends gv
 RUN apt-get install -y --no-install-recommends python3-pip
-RUN pip3 install --no-cache --upgrade pip 
-RUN pip3 install -r requirements.txt
 
-# compile
+# compile and install
 
-RUN bash autogen.sh
-RUN ./configure --with-pic
-RUN make -j8
-RUN make -j8 check
-RUN perl -p -i -e 's/^.*"EPS".*\n//g' /etc/ImageMagick-*/policy.xml
-RUN perl -p -i -e 's/^.*"PS".*\n//g'  /etc/ImageMagick-*/policy.xml
-RUN perl -p -i -e 's/^.*"PDF".*\n//g' /etc/ImageMagick-*/policy.xml
-RUN perl -p -i -e 's/^.*"XPS".*\n//g' /etc/ImageMagick-*/policy.xml
-RUN (cd doc/sphinx; make html)
-
-# install
-
-RUN make install
+RUN cd getfem && \
+    pip3 install --no-cache --upgrade pip && \
+    pip3 install -r requirements.txt && \
+    bash autogen.sh && \
+    ./configure --with-pic && \
+    make -j8 && \
+    make -j8 check && \
+    make install
