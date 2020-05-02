@@ -6,6 +6,7 @@ ENV LANG C.UTF-8
 ENV TERM xterm
 
 USER root
+RUN apt-get update
 
 # getfem repository
 
@@ -15,7 +16,6 @@ RUN cd getfem
 
 # install dependencies
 
-RUN apt-get update
 RUN apt-get install -y --no-install-recommends automake
 RUN apt-get install -y --no-install-recommends libtool
 RUN apt-get install -y --no-install-recommends make
