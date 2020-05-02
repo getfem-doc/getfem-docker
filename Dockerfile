@@ -7,6 +7,7 @@ ENV TERM xterm
 
 # getfem repository
 
+RUN apt-get install -y --no-install-recommends git
 RUN git clone https://github.com/getfem-doc/getfem.git
 RUN cd getfem
 
