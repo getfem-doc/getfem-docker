@@ -11,7 +11,7 @@ RUN apt-get update
 
 # getfem repository
 
-RUN apt-get install ca-certificates
+RUN apt-get install -y --no-install-recommends ca-certificates
 RUN apt-get install -y --no-install-recommends git
 RUN git clone https://github.com/getfem-doc/getfem.git
 RUN cd getfem
