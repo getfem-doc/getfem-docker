@@ -9,6 +9,9 @@ USER root
 WORKDIR work
 RUN apt-get update
 
+# getfem apt install
+RUN apt-get install -y --no-install-recommends python3-getfem++
+
 # getfem repository
 
 RUN apt-get install -y --no-install-recommends ca-certificates
@@ -46,4 +49,3 @@ RUN cd getfem && \
     make -j8 && \
     make -j8 check && \
     make install
-RUN ln -s /usr/local/lib/python3.6/site-packages/getfem /usr/local/lib/python3.6/dist-packages/getfem
