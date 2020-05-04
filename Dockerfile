@@ -4,7 +4,6 @@ MAINTAINER tkoyama010@gmail.com
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
-ENV PYTHONPATH "/usr/local/lib/python3.6/site-packages:$PYTHONPATH"
 
 USER root
 WORKDIR work
@@ -47,3 +46,4 @@ RUN cd getfem && \
     make -j8 && \
     make -j8 check && \
     make install
+RUN ln -s /usr/local/lib/python3.6/site-packages/getfem /usr/local/lib/python3.6/dist-packages/getfem
