@@ -46,4 +46,3 @@ RUN cd getfem && \
     make -j8 && \
     make -j8 check && \
     make install
-RUN ln -s /usr/local/lib/python3.6/site-packages/getfem /usr/local/lib/python3.6/dist-packages/getfem
