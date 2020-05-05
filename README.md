@@ -19,5 +19,5 @@ If you would like to install dependencies, use ``getfemdoc/getfem`` as a base im
 ```dockerfile
 # in your Dockerfile
 FROM getfemdoc/getfem
-
+ENV PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH"
 ```
