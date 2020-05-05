@@ -46,4 +46,3 @@ RUN cd getfem && \
     make -j8 && \
     make -j8 check && \
     make install
-RUN echo 'export PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH"' >> /etc/profile
