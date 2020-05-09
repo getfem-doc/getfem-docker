@@ -40,7 +40,7 @@ RUN apt-get install -y --no-install-recommends python3-venv
 # compile and install
 
 RUN python3 -m venv $HOME/.venv
-RUN source $HOME/.venv/bin/activate
+RUN bash $HOME/.venv/bin/activate
 RUN cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
