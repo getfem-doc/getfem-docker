@@ -38,7 +38,7 @@ RUN apt-get install -y --no-install-recommends python3-pip
 
 # compile and install
 
-RUN python3 -m venv $HOME/.venv
+RUN sudo python3 -m venv $HOME/.venv
 RUN source $HOME/.venv/bin/activate
 RUN cd getfem && \
     pip install --no-cache --upgrade pip && \
@@ -47,8 +47,8 @@ RUN cd getfem && \
     ./configure --prefix=$HOME/.venv --with-pic && \
     make -j8 && \
     make -j8 check && \
-    make install && \
+    sudo make install && \
     cd interface && \
-    make install
+    sudo make install
 RUN deactivate
 RUN echo installed at $HOME/.venv
