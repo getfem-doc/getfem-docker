@@ -14,10 +14,11 @@ Docker images for [GetFEM](http://getfem.org/).
 
 ## Tips
 
-If you would like to install dependencies, use ``getfemdoc/getfem`` as a base image::
+If you would like to install dependencies, use ``getfemdoc/getfem`` as a base image.
+When using GetFEM, activate venv::
 
 ```dockerfile
 # in your Dockerfile
 FROM getfemdoc/getfem
-ENV PYTHONPATH="/usr/local/lib/python3.6/site-packages:$PYTHONPATH"
+RUN source /work/.venv/bin/activate
 ```
