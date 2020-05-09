@@ -47,7 +47,7 @@ RUN source .venv/bin/activate && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
     bash autogen.sh && \
-    ./configure --prefix=.venv --with-pic && \
+    ./configure --prefix=/work/.venv --with-pic && \
     make -j8 && \
     make -j8 check && \
     make install && \
