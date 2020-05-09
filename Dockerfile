@@ -1,6 +1,8 @@
 FROM ubuntu:bionic
 MAINTAINER tkoyama010@gmail.com
 
+SHELL ["/bin/bash", "-c"]
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
@@ -35,14 +37,22 @@ RUN apt-get install -y --no-install-recommends xzdec
 RUN apt-get install -y --no-install-recommends fig2ps
 RUN apt-get install -y --no-install-recommends gv
 RUN apt-get install -y --no-install-recommends python3-pip
+RUN apt-get install -y --no-install-recommends python3-venv
 
 # compile and install
 
-RUN cd getfem && \
-    pip3 install --no-cache --upgrade pip && \
-    pip3 install -r requirements.txt && \
+RUN python3 -m venv .venv
+RUN source .venv/bin/activate && \
+    cd getfem && \
+    pip install --no-cache --upgrade pip && \
+    pip install -r requirements.txt && \
     bash autogen.sh && \
-    ./configure --with-pic && \
+    ./configure --prefix=/work/.venv --with-pic && \
     make -j8 && \
     make -j8 check && \
-    make install
+    make install && \
+    cd interface && \
+    make install && \
+    deactivate
+RUN rm -rf getfem
+RUN echo installed at /work/.venv
