@@ -1,6 +1,8 @@
 FROM ubuntu:bionic
 MAINTAINER tkoyama010@gmail.com
 
+SHELL ["/bin/bash", "-c"]
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
@@ -40,7 +42,7 @@ RUN apt-get install -y --no-install-recommends python3-venv
 # compile and install
 
 RUN python3 -m venv $HOME/.venv
-RUN bash $HOME/.venv/bin/activate
+RUN source $HOME/.venv/bin/activate
 RUN cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
