@@ -42,8 +42,8 @@ RUN apt-get install -y --no-install-recommends python3-venv
 # compile and install
 
 RUN python3 -m venv $HOME/.venv
-RUN source $HOME/.venv/bin/activate
-RUN cd getfem && \
+RUN source $HOME/.venv/bin/activate && \
+    cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
     bash autogen.sh && \
@@ -52,6 +52,6 @@ RUN cd getfem && \
     make -j8 check && \
     make install && \
     cd interface && \
-    make install
-RUN deactivate
+    make install && \
+    deactivate
 RUN echo installed at $HOME/.venv
