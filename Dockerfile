@@ -35,10 +35,11 @@ RUN apt-get install -y --no-install-recommends xzdec
 RUN apt-get install -y --no-install-recommends fig2ps
 RUN apt-get install -y --no-install-recommends gv
 RUN apt-get install -y --no-install-recommends python3-pip
+RUN apt-get install -y --no-install-recommends python3-venv
 
 # compile and install
 
-RUN sudo python3 -m venv $HOME/.venv
+RUN python3 -m venv $HOME/.venv
 RUN source $HOME/.venv/bin/activate
 RUN cd getfem && \
     pip install --no-cache --upgrade pip && \
@@ -47,8 +48,8 @@ RUN cd getfem && \
     ./configure --prefix=$HOME/.venv --with-pic && \
     make -j8 && \
     make -j8 check && \
-    sudo make install && \
+    make install && \
     cd interface && \
-    sudo make install
+    make install
 RUN deactivate
 RUN echo installed at $HOME/.venv
