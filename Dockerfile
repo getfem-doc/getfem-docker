@@ -47,7 +47,7 @@ RUN source .venv/bin/activate && \
     cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
-    git checkout $TAG_NAME
+    git checkout $TAG_NAME && \
     bash autogen.sh && \
     ./configure --prefix=/work/.venv --with-pic && \
     make -j8 && \
