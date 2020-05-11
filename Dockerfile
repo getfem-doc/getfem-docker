@@ -6,7 +6,7 @@ SHELL ["/bin/bash", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
-ENV TAG master
+ENV TAG_NAME=master
 
 USER root
 WORKDIR work
@@ -47,7 +47,7 @@ RUN source .venv/bin/activate && \
     cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
-    git checkout $TAG
+    git checkout $TAG_NAME
     bash autogen.sh && \
     ./configure --prefix=/work/.venv --with-pic && \
     make -j8 && \
