@@ -16,7 +16,7 @@ RUN apt-get update
 
 RUN apt-get install -y --no-install-recommends ca-certificates
 RUN apt-get install -y --no-install-recommends git
-RUN git clone https://github.com/getfem-doc/getfem.git
+RUN git clone https://git.savannah.nongnu.org/git/getfem.git
 
 # install dependencies
 
