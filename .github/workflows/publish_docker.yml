@@ -4,7 +4,7 @@ on:
     - cron:  '0 0 * * *'
   pull_request:
     branches:
-      - master
+      - v5.2
 jobs:
   build:
     runs-on: ubuntu-latest
