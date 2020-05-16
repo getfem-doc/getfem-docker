@@ -8,6 +8,8 @@
 
 Docker images for [GetFEM](http://getfem.org/).
 
+![logogetfem](http://getfem.org/_static/logogetfem.png)
+
 ## Images
 
 * getfemdoc/getfem
@@ -22,3 +24,20 @@ When using GetFEM, activate venv::
 FROM getfemdoc/getfem
 RUN source /work/.venv/bin/activate
 ```
+
+## screenshots
+
+![tube](http://getfem.org/_static/tube.png)
+![cuve_3D_streamlines](http://getfem.org/_static/cuve_3D_streamlines.png)
+![helm_k7_P10_gt6](http://getfem.org/_images/helm_k7_P10_gt6.png)
+![tripodvonmiseswithmesh](http://getfem.org/_static/tripodvonmiseswithmesh.png)
+![modestructure_paolo_small](http://getfem.org/_images/modestructure_paolo_small.png)
+![pneu_Q2_vonmises_small](http://getfem.org/_images/pneu_Q2_vonmises_small.png)
+![xfembeammesh](http://getfem.org/_images/xfembeammesh.png)
+![fissure_3d_de_traviole](http://getfem.org/_images/fissure_3d_de_traviole.png)
+![torsion034](http://getfem.org/_images/torsion034.png)
+![shape1](http://getfem.org/_images/shape1.png)
+![shape2](http://getfem.org/_images/shape2.png)
+![shape3](http://getfem.org/_images/shape3.png)
+![shape4](http://getfem.org/_images/shape4.png)
+![gear](http://getfem.org/_images/gear.png)
