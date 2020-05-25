@@ -22,7 +22,7 @@ When using GetFEM, activate venv::
 ```dockerfile
 # in your Dockerfile
 FROM getfemdoc/getfem
-RUN source /work/.venv/bin/activate
+RUN source /venv/bin/activate
 ```
 
 ## screenshots
