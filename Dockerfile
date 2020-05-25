@@ -9,7 +9,7 @@ ENV TERM xterm
 ENV TAG_NAME=master
 
 USER root
-WORKDIR work
+WORKDIR root
 RUN apt-get update
 
 # getfem repository
@@ -49,7 +49,7 @@ RUN source .venv/bin/activate && \
     pip install -r requirements.txt && \
     git checkout $TAG_NAME && \
     bash autogen.sh && \
-    ./configure --prefix=/work/.venv --with-pic && \
+    ./configure --prefix=/root/.venv --with-pic && \
     make -j8 && \
     make -j8 check && \
     make install && \
@@ -57,4 +57,4 @@ RUN source .venv/bin/activate && \
     make install && \
     deactivate
 RUN rm -rf getfem
-RUN echo installed at /work/.venv
+RUN echo installed at /root/.venv
