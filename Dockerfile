@@ -30,7 +30,6 @@ RUN apt-get install -y --no-install-recommends libmumps-seq-dev
 RUN apt-get install -y --no-install-recommends liblapack-dev
 RUN apt-get install -y --no-install-recommends libopenblas-dev
 RUN apt-get install -y --no-install-recommends libpython3-dev
-RUN apt-get install -y --no-install-recommends ufraw
 RUN apt-get install -y --no-install-recommends imagemagick
 RUN apt-get install -y --no-install-recommends fig2dev
 RUN apt-get install -y --no-install-recommends texlive
