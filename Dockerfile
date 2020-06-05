@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:latest
 MAINTAINER tkoyama010@gmail.com
 
 SHELL ["/bin/bash", "-c"]
