@@ -13,3 +13,4 @@ RUN apt-get update
 
 RUN apt-get install -y --no-install-recommends python3-getfem++
 RUN apt-get install -y --no-install-recommends libgetfem++-dev
+RUN apt-get install -y --no-install-recommends mayavi2
