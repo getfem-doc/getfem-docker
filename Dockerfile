@@ -49,7 +49,7 @@ RUN apt-get install -y --no-install-recommends python3-venv
 
 RUN python3 -m venv /venv
 RUN source /venv/bin/activate && \
-    cd getfem-5.4.1/ && \
+    cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
     git checkout $TAG_NAME && \
