@@ -1,5 +1,5 @@
-FROM ubuntu:latest
-# LABEL maintainer=""
+FROM ubuntu:bionic
+MAINTAINER tkoyama010@gmail.com
 
 SHELL ["/bin/bash", "-c"]
 
