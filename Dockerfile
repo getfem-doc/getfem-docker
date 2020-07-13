@@ -16,11 +16,8 @@ RUN apt-get  -y --no-install-recommends upgrade
 # getfem repository
 
 RUN apt-get install -y --no-install-recommends ca-certificates
-# RUN apt-get install -y --no-install-recommends git
-# RUN git clone https://git.savannah.nongnu.org/git/getfem.git
-RUN apt-get install -y --no-install-recommends wget
-RUN wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.4.1.tar.gz
-RUN tar xzf getfem-5.4.1.tar.gz
+RUN apt-get install -y --no-install-recommends git
+RUN git clone https://git.savannah.nongnu.org/git/getfem.git
 
 # install dependencies
 
