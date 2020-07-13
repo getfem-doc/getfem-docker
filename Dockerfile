@@ -44,10 +44,6 @@ RUN apt-get install -y --no-install-recommends fig2ps
 RUN apt-get install -y --no-install-recommends gv
 RUN apt-get install -y --no-install-recommends python3-pip
 RUN apt-get install -y --no-install-recommends python3-venv
-# RUN apt-get install -y --no-install-recommends python3-numpy
-# RUN apt-get install -y --no-install-recommends python3-scipy
-# RUN apt-get install -y --no-install-recommends python3-sphinx
-# RUN apt-get install -y --no-install-recommends python3-mpi4py
 
 # compile and install
 
