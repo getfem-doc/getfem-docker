@@ -21,8 +21,7 @@ RUN git clone https://git.savannah.nongnu.org/git/getfem.git
 
 # install dependencies
 
-RUN apt-get update
-# RUN apt-get install -y --no-install-recommends automake
+RUN apt-get install -y --no-install-recommends automake
 RUN apt-get install -y --no-install-recommends libtool
 RUN apt-get install -y --no-install-recommends make
 RUN apt-get install -y --no-install-recommends g++
