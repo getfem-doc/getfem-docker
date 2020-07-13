@@ -55,9 +55,9 @@ RUN python3 -m venv /venv
 RUN source /venv/bin/activate && \
     cd getfem-5.4.1/ && \
     pip install --no-cache --upgrade pip && \
-    pip install numpy scipy sphinx mpi4py && \
-#    git checkout $TAG_NAME && \
-#    bash autogen.sh && \
+    pip install -r requirements.txt && \
+    git checkout $TAG_NAME && \
+    bash autogen.sh && \
     ./configure --prefix=/venv --with-pic && \
     make -j8 && \
     make -j8 check && \
