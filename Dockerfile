@@ -4,7 +4,6 @@ MAINTAINER tkoyama010@gmail.com
 SHELL ["/bin/bash", "-c"]
 
 ENV DEBIAN_FRONTEND=noninteractive
-# ENV DEBCONF_NOWARNINGS yes
 ENV LANG C.UTF-8
 ENV TERM xterm
 ENV TAG_NAME=master
