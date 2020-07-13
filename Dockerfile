@@ -6,11 +6,12 @@ SHELL ["/bin/bash", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
-ENV TAG_NAME=master
+ENV TAG_NAME=v5.4.1
 
 USER root
 WORKDIR work
 RUN apt-get update
+RUN apt-get  -y --no-install-recommends upgrade
 
 # getfem repository
 
@@ -24,6 +25,10 @@ RUN apt-get install -y --no-install-recommends automake
 RUN apt-get install -y --no-install-recommends libtool
 RUN apt-get install -y --no-install-recommends make
 RUN apt-get install -y --no-install-recommends g++
+RUN apt-get install -y --no-install-recommends gfortran
+RUN apt-get install -y --no-install-recommends libopenmpi-dev
+RUN apt-get install -y --no-install-recommends openmpi-bin
+RUN apt-get install -y --no-install-recommends libhdf5-openmpi-dev
 RUN apt-get install -y --no-install-recommends libqd-dev
 RUN apt-get install -y --no-install-recommends libqhull-dev
 RUN apt-get install -y --no-install-recommends libmumps-seq-dev
