@@ -11,7 +11,7 @@ ENV TAG_NAME=master
 USER root
 WORKDIR work
 RUN apt-get update
-# RUN apt-get  -y --no-install-recommends upgrade
+RUN apt-get  -y --no-install-recommends upgrade
 
 # getfem repository
 
