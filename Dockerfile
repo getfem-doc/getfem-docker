@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM jupyter/scipy-notebook
 MAINTAINER tkoyama010@gmail.com
 
 ENV DEBIAN_FRONTEND=noninteractive
