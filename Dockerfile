@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM jupyter/base-notebook
 MAINTAINER tkoyama010@gmail.com
 
 SHELL ["/bin/bash", "-c"]
