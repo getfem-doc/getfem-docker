@@ -52,3 +52,4 @@ RUN cd getfem && \
     cd interface && \
     make install
 RUN rm -rf getfem
+RUN sudo chown -R jovyan:jovyan /home/jovyan/.local/share/jupyter
