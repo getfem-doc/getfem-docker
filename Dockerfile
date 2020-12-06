@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM jupyter/base-notebook:python-3.8.6
 MAINTAINER tkoyama010@gmail.com
 
 SHELL ["/bin/bash", "-c"]
@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 ENV TERM xterm
 ENV TAG_NAME=master
 
-USER root
+USER jovyan
 WORKDIR work
 RUN apt-get update
 
@@ -41,6 +41,7 @@ RUN apt-get install -y --no-install-recommends python3-venv
 
 # compile and install
 
+RUN pip show pip
 RUN python3 -m venv /venv
 RUN source /venv/bin/activate && \
     cd getfem && \
