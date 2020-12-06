@@ -41,7 +41,7 @@ RUN apt-get install -y --no-install-recommends python3-venv
 
 # compile and install
 
-RUN pip show pip
+RUN sudo pip show pip
 RUN python3 -m venv /venv
 RUN source /venv/bin/activate && \
     cd getfem && \
