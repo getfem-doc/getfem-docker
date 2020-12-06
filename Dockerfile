@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 ENV TERM xterm
 ENV TAG_NAME=master
 
-USER jovyan
+USER root
 WORKDIR work
 RUN apt-get update
 
