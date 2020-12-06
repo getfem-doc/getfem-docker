@@ -4,6 +4,7 @@ MAINTAINER tkoyama010@gmail.com
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV TERM xterm
+ENV TAG_NAME=getfem-jupyter
 
 USER root
 WORKDIR work
