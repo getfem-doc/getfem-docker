@@ -46,6 +46,7 @@ RUN source /venv/bin/activate && \
     cd getfem && \
     pip install --no-cache --upgrade pip && \
     pip install -r requirements.txt && \
+    pip install jupyterlab && \
     git checkout $TAG_NAME && \
     bash autogen.sh && \
     ./configure --prefix=/venv --with-pic && \
