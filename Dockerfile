@@ -54,6 +54,7 @@ RUN source /venv/bin/activate && \
     make install && \
     cd interface && \
     make install && \
+    pip install pyvista && \
     deactivate
 RUN rm -rf getfem
 RUN echo installed at /venv
