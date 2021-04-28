@@ -44,7 +44,7 @@ RUN apt-get install -y --no-install-recommends liboctave-dev
 # compile and install
 
 RUN python3 -m venv /venv
-RUN echo "addpath('toolbox_dir', '-begin')" >> $HOME/.octaverc
+RUN echo "addpath('toolbox_dir', '-begin')" >> /root/.octaverc
 RUN source /venv/bin/activate && \
     cd getfem && \
     pip install --no-cache --upgrade pip && \
