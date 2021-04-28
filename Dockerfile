@@ -38,6 +38,8 @@ RUN apt-get install -y --no-install-recommends fig2ps
 RUN apt-get install -y --no-install-recommends gv
 RUN apt-get install -y --no-install-recommends python3-pip
 RUN apt-get install -y --no-install-recommends python3-venv
+RUN apt-get install -y --no-install-recommends octave
+RUN apt-get install -y --no-install-recommends liboctave-dev
 
 # compile and install
 
@@ -48,7 +50,7 @@ RUN source /venv/bin/activate && \
     pip install -r requirements.txt && \
     git checkout $TAG_NAME && \
     bash autogen.sh && \
-    ./configure --prefix=/venv --with-pic && \
+    ./configure --prefix=/venv --with-pic --enable-octave && \
     make -j8 && \
     make -j8 check && \
     make install && \
@@ -57,3 +59,4 @@ RUN source /venv/bin/activate && \
     deactivate
 RUN rm -rf getfem
 RUN echo installed at /venv
+RUN echo "addpath('toolbox_dir', '-begin')" >> $HOME/.octaverc
